@@ -32,7 +32,12 @@ if has('syntax') && has('eval')
   packadd matchit
 endif
 
+""""""""""""""""""""""""""""
 "Backups, swaps and undos
+"If using these, recommended to set up a job that clears these folders of
+"files older than a certain time (eg, find ~/.vim/backup-dir -type f -mtime
+"+90 -delete)
+"
 if !isdirectory($HOME."/.vim")
 	call mkdir($HOME."/.vim", "", 0770)
 endif
@@ -51,4 +56,7 @@ set undodir=~/.vim/undo-dir,.
 set backup
 set undofile
 
+""""""""""
+"Use pathogen
+"""""""""
 execute pathogen#infect()
