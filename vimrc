@@ -1,31 +1,5 @@
-
-" An example for a vimrc file.
-"
-" Maintainer:	Bram Moolenaar <Bram@vim.org>
-" Last change:	2016 Jul 28
-"
-" To use it, copy it to
-"     for Unix and OS/2:  ~/.vimrc
-"	      for Amiga:  s:.vimrc
-"  for MS-DOS and Win32:  $VIM\_vimrc
-"	    for OpenVMS:  sys$login:.vimrc
-
-" When started as "evim", evim.vim will already have done these settings.
-if v:progname =~? "evim"
-  finish
-endif
-
 " Get the defaults that most users want.
 source $VIMRUNTIME/defaults.vim
-
-if has("vms")
-  set nobackup		" do not keep a backup file, use versions instead
-else
-  set backup		" keep a backup file (restore to previous version)
-  if has('persistent_undo')
-    set undofile	" keep an undo file (undo changes after closing)
-  endif
-endif
 
 if &t_Co > 2 || has("gui_running")
   " Switch on highlighting the last used search pattern.
@@ -57,5 +31,24 @@ endif " has("autocmd")
 if has('syntax') && has('eval')
   packadd matchit
 endif
+
+"Backups, swaps and undos
+if !isdirectory($HOME."/.vim")
+	call mkdir($HOME."/.vim", "", 0770)
+endif
+if !isdirectory($HOME."/.vim/backup-dir")
+	call mkdir($HOME."/.vim/backup-dir", "", 0700)
+endif
+if !isdirectory($HOME."/.vim/swap-dir")
+	call mkdir($HOME."/.vim/swap-dir", "", 0700)
+endif
+if !isdirectory($HOME."/.vim/undo-dir")
+	call mkdir($HOME."/.vim/undo-dir", "", 0700)
+endif
+set backupdir=~/.vim/backup-dir,.
+set directory=~/.vim/swap-dir,.
+set undodir=~/.vim/undo-dir,.
+set backup
+set undofile
 
 execute pathogen#infect()
