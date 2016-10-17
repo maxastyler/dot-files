@@ -1,16 +1,4 @@
 {
-	"lemonbar": {
-		"files_to_link":{
-			"i3_lemonbar_config":"~/.config/i3/i3_lemonbar_config",
-			"i3_lemonbar_parser.sh":"~/.config/i3/i3_lemonbar_parser.sh",
-			"i3_workspaces.pl":"~/.config/i3/i3_workspaces.pl",
-			"i3_lemonbar_conky":"~/.config/i3/i3_lemonbar_conky",
-			"i3_lemonbar.sh":"~/.config/i3/i3_workspaces.py"
-		},
-		"scripts_to_run":{
-			
-		}
-	},
 	"conky": {
 		"files_to_link":{
 			"conky.conf":"~/.config/conky/conky.conf",
