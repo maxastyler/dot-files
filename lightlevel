@@ -1,2 +1,2 @@
-#/bin/zsh
-notify-send $(echo "scale=1;$(light/$(light -m)"|bc)
+#!/bin/zsh
+notify-send $(echo "scale=2;$(light)/$(light -m)*100."|bc)%
