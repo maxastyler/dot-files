@@ -1,0 +1,2 @@
+#/bin/zsh
+notify-send $(echo "scale=1;$(light/$(light -m)"|bc)

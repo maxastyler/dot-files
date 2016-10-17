@@ -1,0 +1,7 @@
+#!/bin/zsh
+if $(pamixer --get-mute)
+then
+	notify-send "muted"
+else
+	notify-send  "unmuted"
+fi
