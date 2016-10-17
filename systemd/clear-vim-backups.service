@@ -1,0 +1,7 @@
+[Unit]
+Description=Service to clear the vim backups older than 50 days in ~/.vim/{backup folders}
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/sh -c '	find ~/.vim/backup-dir -type f -mtime +50 -delete;\
+				find ~/.vim/undo-dir -type f -mtime +50 -delete;'

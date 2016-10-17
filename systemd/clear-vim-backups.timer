@@ -1,0 +1,8 @@
+[Unit]
+Description=Timer for the delete vim backups script
+
+[Timer]
+OnCalendar=*:0/1
+
+[Install]
+WantedBy=default.target
