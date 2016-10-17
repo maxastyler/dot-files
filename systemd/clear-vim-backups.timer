@@ -2,7 +2,7 @@
 Description=Timer for the delete vim backups script
 
 [Timer]
-OnCalendar=*:0/1
+OnCalendar=daily
 
 [Install]
 WantedBy=default.target

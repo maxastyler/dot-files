@@ -1,0 +1,67 @@
+{
+	"conky": {
+		"files_to_link":{
+			"conky.conf":"~/.config/conky/conky.conf",
+			"conky.desktop":"~/.config/autostart/conky.desktop"
+		},
+		"scripts_to_run":{
+
+		}
+	},
+	"dunst": {
+		"files_to_link":{
+			"dunstrc":"~/.config/dunst/dunstrc"
+		},
+		"scripts_to_run":{
+
+		}
+	},
+	"i3": {
+		"files_to_link":{
+			"i3config":"~/.config/i3/config",
+			"volumelevel":"~/.config/i3/volumelevel",
+			"volumemute":"~/.config/i3/volumemute",
+			"lightlevel":"~/.config/i3/lightlevel",
+			"py3status.conf":"~/.config/i3/py3status.conf"
+		},
+		"scripts_to_run":{
+
+		}
+	},
+	"systemd": {
+		"files_to_link":{
+
+		},
+		"scripts_to_run":{
+
+		}
+
+	},
+	"vim": {
+		"files_to_link":{
+			"vimrc":"~/.vimrc"
+		},
+		"scripts_to_run":{
+
+		}
+
+	},
+	"Xres": {
+		"files_to_link":{
+			"Xdefaults":"~/.Xdefaults"
+		},
+		"scripts_to_run":{
+
+		}
+
+	},
+	"zsh": {
+		"files_to_link":{
+			"zshrc":"~/.zshrc"	
+		},
+		"scripts_to_run":{
+
+		}
+
+	}
+}
