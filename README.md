@@ -1,32 +1,12 @@
 # dot-files
-A collection of my dot files
+A collection of my dot files with an installer.
 
-dex is used to start some applications with their .desktop files in ~/.config/autostart
+##Requirements
 
-zsh is installed with oh-my-zsh
+Python3 for the installer. Dex for autostarting certain programs. Conky, py3status, clipit, nm-applet, volumeicon, dmenu, and a few other things.
 
-At the moment, manual sym-linking is necessary. This'll be changed soon.
+## Installation
 
-The symlinks expected are:
-
-Xdefaults -> ~/.Xdefaults
-
-conky.conf -> ~/.config/conky/conky.conf
-
-conky.desktop -> ~/.config/autostart/conky.desktop
-
-dunst -> ~/.config/dunst/dunstrc
-
-i3config -> ~/.config/i3/config
-
-py3status.conf -> ~/.config/i3/py3status.conf
-
-lightlevel -> ~/.config/i3/lightlevel
-
-volumelevel -> ~/.config/i3/volumelevel
-
-volumemute -> ~/.config/i3/volumemute
-
-vimrc -> ~/.vimrc
-
-zshrc -> ~/.zshrc
+You can symlink the files manually with ln -s [file] [place to put file], or just use the setup.py script. 
+If using python setup.py install, the script automatically backs up current configs to a folder ~/.mtyler_dotfiles_backup/
+Using python setup.py uninstall will restore any files backed up to their original places, and delete any other files that were installed with this. It also deletes the .mtyler_dotfiles_backup folder.
