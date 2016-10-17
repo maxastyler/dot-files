@@ -7,6 +7,15 @@ import sys
 
 backup_folder=os.path.expanduser("~/.mtyler_dotfiles_backup")
 
+def load_json(file_name):
+    with open(file_name) as data_file:
+        data=json.load(data_file)
+    prog_categories=[]
+    for prog_type in data:
+        prog_categories.append(prog_files(prog_type, data[prog_type]["files_to_link"], data[prog_type]["scripts_to_run"]))
+    return prog_categories
+
+
 class prog_files:
     def __init__(self, program, files, scripts):
         self.program=program
@@ -41,13 +50,20 @@ class prog_files:
                     os.remove(self.files[thing])
             os.symlink(os.path.join(os.getcwd(), self.program, thing), self.files[thing])
 
+    def delete_files(self):
+        for thing in self.files:
+            if os.path.exists(self.files[thing]):
+                os.remove(self.files[thing])
+
+    def restore_backup(self):
+        for thing in self.files:
+            if os.path.exists(os.path.join(backup_folder, self.program, thing)):
+                if os.path.exists(self.files[thing]):
+                    os.remove(self.files[thing])
+                shutil.move(os.path.join(backup_folder, self.program, thing), self.files[thing])
+
 
 def install():
-    with open('locations.json') as data_file:
-        data=json.load(data_file)
-    prog_categories=[]
-    for prog_type in data:
-        prog_categories.append(prog_files(prog_type, data[prog_type]["files_to_link"], data[prog_type]["scripts_to_run"]))
     if os.path.exists(backup_folder):
         print("\n\nBackup directory detected at:", backup_folder, "\nIf you install, you'll overwrite any files here which may remove your original configs.")
         check=None
@@ -55,13 +71,29 @@ def install():
             check=input("Do you want to continue installing?[y/n]: ")
             if check=="n":
                 sys.exit()
+    prog_categories=load_json('locations.json')
     print("Writing files...")
     for prog in prog_categories:
         prog.write_files(True)
     print("Done")
 
 def uninstall():
-    pass
+    prog_categories=load_json('locations.json')
+    print("\n\nIf you choose to uninstall without having any backup files\nThis will delete your current config files. These may be your own carefully crafted ones!")
+    check=None
+    while check!="y":
+        check=input("Are you sure you want to uninstall?[y/n]: ")
+        if check=='n':
+            sys.exit()
+    print("Deleting files")
+    for prog in prog_categories:
+        prog.delete_files()
+    print("Restoring backup")
+    for prog in prog_categories:
+        prog.restore_backup()
+    if os.path.exists(backup_folder):
+        shutil.rmtree(backup_folder)
+    print("Done")
 
 def main():
     parser = argparse.ArgumentParser(description='Setup and remove script for my dotfiles')

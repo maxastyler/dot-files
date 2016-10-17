@@ -30,6 +30,8 @@
 	},
 	"systemd": {
 		"files_to_link":{
+			"clear-vim-backups.service":"~/.config/systemd/user/clear-vim-backups.service",
+			"clear-vim-backups.timer":"~/.config/systemd/user/clear-vim-backups.timer"
 
 		},
 		"scripts_to_run":{
