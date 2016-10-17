@@ -22,7 +22,7 @@
 			"volumelevel":"~/.config/i3/volumelevel",
 			"volumemute":"~/.config/i3/volumemute",
 			"lightlevel":"~/.config/i3/lightlevel",
-			"py3status.conf":"~/.config/i3/py3status.conf"
+			"i3blocks.conf":"~/.i3blocks.conf"
 		},
 		"scripts_to_run":{
 

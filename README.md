@@ -3,7 +3,7 @@ A collection of my dot files with an installer.
 
 ##Requirements
 
-Python3 for the installer. Dex for autostarting certain programs. Conky, py3status, clipit, nm-applet, volumeicon, dmenu, and a few other things.
+Python3 for the installer. Dex for autostarting certain programs. Conky, i3blocks, clipit, nm-applet, volumeicon, dmenu, and a few other things.
 
 ## Installation
 
