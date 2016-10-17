@@ -3,6 +3,8 @@ A collection of my dot files
 
 dex is used to start some applications with their .desktop files in ~/.config/autostart
 
+zsh is installed with oh-my-zsh
+
 At the moment, manual sym-linking is necessary. This'll be changed soon.
 
 The symlinks expected are:
@@ -26,3 +28,5 @@ volumelevel -> ~/.config/i3/volumelevel
 volumemute -> ~/.config/i3/volumemute
 
 vimrc -> ~/.vimrc
+
+zshrc -> ~/.zshrc
