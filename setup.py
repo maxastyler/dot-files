@@ -48,6 +48,11 @@ class prog_files:
                     shutil.move(self.files[thing], os.path.join(backup_folder, self.program, thing))
                 else:
                     os.remove(self.files[thing])
+            else:
+                try:
+                    os.makedirs(os.path.dirname(self.files[thing]))
+                except: 
+                    pass
             os.symlink(os.path.join(os.getcwd(), self.program, thing), self.files[thing])
 
     def delete_files(self):
