@@ -80,11 +80,13 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
+
+####TODO: maybe add messages to tell which orintation the windows are in?
 # split in horizontal orientation
-bindsym $mod+h split h; exec notify-send --no-startup-id 'tile horizontally'
+bindsym $mod+h split h
 
 # split in vertical orientation
-bindsym $mod+v split v; exec notify-send --no-startup-id 'tile vertically'
+bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
