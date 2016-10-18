@@ -1,4 +1,13 @@
 {
+	"lemonbar":{
+		"files_to_link":{
+			"restart.sh":"~/.config/powerline/restart_lemonbar.sh"
+		},
+		"scripts_to_run":{
+
+		}
+
+	},
 	"conky": {
 		"files_to_link":{
 			"conky.conf":"~/.config/conky/conky.conf",

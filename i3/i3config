@@ -210,7 +210,8 @@ bindsym XF86AudioMute exec --no-startup-id "pamixer -t; ~/.config/i3/volumemute"
 #        status_command ~/.config/i3/i3_lemonbar.sh
 #}
 #Run lemonbar
-exec "python /lib/python3.5/site-packages/powerline/bindings/lemonbar/powerline-lemonbar.py --i3&"
+#exec "python /lib/python3.5/site-packages/powerline/bindings/lemonbar/powerline-lemonbar.py --i3 --height=100 &"
+exec_always --no-startup-id "~/.config/powerline/restart_lemonbar.sh"
 
 
 exec_always --no-startup-id feh --bg-fill $HOME/Pictures/Backgrounds/solarised.png
